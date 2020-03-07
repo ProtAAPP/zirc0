@@ -1,0 +1,12 @@
+schema_version: "1.0.0"
+name: Aplicacion del Esquema Nacional de Seguridad para ZIRC0
+metadata:
+  description: ZIRC0 Zarancon
+  maintainers:
+    - protAAPP@protaapp.es
+components:
+  - ./components/CentOS_7
+standards:
+  - ./standards/ENS.yaml
+certifications:
+  - ./certifications/ZIRC0-Entornos_produccion/ens-bajo.yaml

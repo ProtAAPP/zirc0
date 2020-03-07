@@ -1,0 +1,697 @@
+documentation_complete: false
+name: Política para VMs CentOS 7
+schema_version: 3.0.0
+references:
+- name: Política para Sistema Operativo CentOS 7
+  path: https://www.ccn-cert.cni.es/pdf/guias/series-ccn-stic/guias-de-acceso-publico-ccn-stic/3674-ccn-stic-619-implementacion-de-seguridad-sobre-centos7/file.html
+satisfies:
+- control_key: OP.ACC.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Desde las categorías básicas debe especificarse mecanismos para garantizar la autenticidad
+      y trazabilidad de las diferentes entidades. Esto se transforma generando una identificación singular
+      para cada entidad - usuario, proceso o servicio. De esta manera siempre se podrá conocer quién
+      recibe qué derechos y se puede saber qué ha hecho.
+
+      La identificación de usuario se traduce en la necesidad de crear cuentas únicas e inequívocas
+      para cada usuario y servicio, a través de cuentas locales en los puestos de trabajo. Dichas cuentas
+      deberán ser gestionadas de tal forma que deberán ser inhabilitadas cuando se dieran una serie
+      de condicionantes:
+
+        a.  El usuario deja la organización.
+
+        b.  Cesa en la función para la cual se requería dicha cuenta.
+
+        c.  La persona que lo autorizó emite una orden en contra.
+
+        Debe tenerse en consideración que nunca deberán existir dos cuentas iguales de forma que
+        estas no puedan confundirse o bien imputarse acciones a usuarios diferentes.
+- control_key: OP.ACC.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      Los requisitos de acceso se aplican desde la categoría básica y atenderán a la necesidad que
+      los recursos del sistema queden protegidos con algún mecanismo que impida su utilización, salvo
+      a las entidades que disfruten de los derechos de acceso suficientes.
+
+      Estos derechos se controlarán y asignarán atendiendo a la política y normativa de seguridad
+      para la organización, a través de la persona responsable de dicha determinación y haciendo uso
+      de las tecnologías necesarias.
+
+      Desde el punto de vista tecnológico, esta medida abarca un gran número de actividades, de
+      tal forma que los puntos de control para restringir o conceder un acceso son abundantes. Acceder
+      a un fichero o una carpeta o imprimir en un recurso, son acciones que pueden ser controladas y
+      determinar para ello los permisos asignados.
+
+      La plantilla de seguridad recoge una serie de permisos que serán asignados con objeto de
+      limitar las acciones por parte de usuarios y administradores. De esta forma y controlando los
+      requisitos de acceso, se reducirán todos aquellos riesgos del uso habitual de administración de
+      un puesto de trabajo.
+
+      Es necesario en este sentido que el operador conozca los requerimientos y procesos para la
+      asignación de las listas de control de acceso (ACL), teniendo en consideración que es la base en
+      las infraestructuras Linux para la concesión o no de acceso, así como el que estará permitido o
+      denegado en cada circunstancia.
+- control_key: OP.ACC.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      Aplicable a partir de la categoría media, se considera un requerimiento importante para una
+      organización la segregación de funciones en base a la actividad. De esta forma se establece
+      cadenas de autorización y control enfocadas a evitar la existencia de una única persona
+      autorizada y que ésta pueda abusar de sus derechos para cometer alguna acción ilícita.
+      Desde el punto de vista formal la segregación de funciones deberá realizarse al menos para
+      las siguientes tareas:
+
+        a)  Desarrollo de operación.
+
+        b)  Configuración y mantenimiento del sistema de operación.
+
+        c)  Auditoría o supervisión de otra función.
+
+      Dichos procesos de segregación son factibles realizarlos a través de los propios mecanismos
+      que proporciona CentOS 7 Linux, así como las funcionalidades implicadas en la presente guía.
+
+      Con respecto a los controles de auditoría o supervisión, se recomienda al operador de aquellas
+      organizaciones que no contaran con sistemas de recolección, consolidación y tratamiento de
+      eventos, la lectura de documentación sobre la herramienta Audit incluida en CentOS 7 Linux.
+
+      Aunque será mencionada a lo largo de la presente guía en relación a todas las acciones enfocadas
+      a garantizar la trazabilidad, se recoge específicamente la capacidad para la segregación de
+      auditoría de registros empleados en CentOS 7 Linux a través de la herramienta Audit.
+- control_key: OP.ACC.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      Altamente vinculado a ```**OP.ACC.2. REQUISITOS DE ACCESO**```, estas medidas requieren consolidación de los
+      derechos de acceso, de tal forma que:
+
+        a) Exista la aplicación del mínimo privilegio. Los privilegios de cada usuario se reducirán al
+        mínimo estrictamente necesario para poder cumplir las obligaciones.
+
+        b) Necesidad de conocer. Los privilegios se limitarán de forma que los usuarios sólo accederán
+        al conocimiento de aquella información requerida para cumplir sus obligaciones.
+
+        c) Capacidad de autorizar. Sólo y exclusivamente el personal con competencia para ello,
+        podrá conceder, alterar o anular la autorización de acceso a los recursos, conforme a los
+        criterios establecidos por su propietario.
+
+      Como ya se comentó previamente, CentOS 7 Linux se encuentra facultado para establecer
+      diferentes mecanismos de control de acceso, proporcionando así la gestión de derechos de
+      acceso.
+
+      Adicionalmente y siguiendo uno de los principios fundamentales de mínimo privilegio posible,
+      a través de la aplicación de la presente guía se configurarán diferentes permisos a las cuentas de
+      usuario, limitando la utilización de la cuenta “root” para tareas específicas que necesiten un nivel
+      de privilegios elevado, ésta configuración debe entenderse como un mecanismo para impedir
+      que el trabajo directo con usuarios con privilegios de administrador, repercuta negativamente
+      en la seguridad, a acometer todas las acciones con el máximo privilegio cuando este no es
+      siempre requerido.
+
+      Así en la navegación a Internet, acceso a recurso o tratamientos ofimáticos por citar algunos
+      ejemplos frecuentes, un usuario no requiere del privilegio de administración para desempeñarlo.
+      Así y sin darse cuenta podría estar poniendo en grave riesgo la seguridad del sistema al tratar
+      ficheros, ejecutables, componentes y otros, que descargados de Internet u otras fuentes de
+      dudosa confianza con máximos privilegios.
+
+      En ambientes donde varios usuarios usan uno o más sistemas GNU/Linux, es necesario otorgar
+      distintos permisos o privilegios para que estos puedan hacer uso de comandos propios del
+      usuario administrador “root”. Para que los usuarios puedan hacer uso de los programas propios
+      de sus funciones pero que son propiedad de “root” sin “entregar” la contraseña la mejor
+      alternativa es hacer uso de sudo.
+
+      Sudo permite implementar un control de acceso altamente configurable para que usuarios
+      ejecutan que comandos. Si un usuario normal desea ejecutar un comando de root (o de cualquier
+      otro usuario), sudo verifica en su lista de permisos y si está permitido la ejecución de ese
+      comando para ese usuario, entonces sudo se encarga de ejecutarlo. Es decir, sudo es un
+      programa que basado en una lista de control (/etc/sudoers) permite (o no) la ejecución al usuario
+      que lo invocó sobre un determinado programa propiedad de otro usuario, generalmente del
+      administrador del sistema “root”.
+
+      Puesto que las condiciones de funcionalidad del comando sudo, pueden establecerse desde
+      la usabilidad hasta la máxima seguridad y atendiendo a los criterios marcados por el propio
+      Esquema Nacional de Seguridad, las diferentes plantillas de seguridad que se generan para las
+      diferentes categorías atenderán a estos criterios de criticidad. No obstante, y aunque se detallará
+      más adelante, el operador puede conocer la funcionalidad del comando SUDO a través de la
+      información facilitada por el propio fabricante
+      https://wiki.centos.org/es/TipsAndTricks/BecomingRoot
+
+      De esta forma el principio de mínima exposición y menor privilegio se puede materializar de
+      forma extensiva a los propios administradores de los servidores y servicios que gestiona la
+      organización.
+- control_key: OP.ACC.5
+  standard_key: ENS
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      Dentro de los procesos habituales en el manejo de los sistemas de la información, el
+      correspondiente a la autenticación, corresponde al primero a llevar a efecto. Antes de acceder a
+      datos, gestionar recursos o tratar servicios es necesario indicar al sistema “quién eres”.
+
+      El sistema de autenticación se puede traducir tecnológicamente mediante múltiples
+      mecanismos, siendo el del empleo de una contraseña el más habitual pero no por ello el más
+      seguro, sino todo lo contrario. Los mecanismos de autenticación se deberán adecuar en función
+      del nivel de criticidad de la información o el servicio atendiendo lógicamente a diferentes
+      criterios.
+
+      Según establece el propio Esquema Nacional de Seguridad, a grandes generalidades estos
+      serán:
+
+        a) Para la categoría básica se admitirá el uso de cualquier mecanismo de autenticación - claves
+        concertadas, dispositivos físicos (en inglés “Tokens”), sistemas de biometría o certificados
+        digitales entre otros.
+
+        b) Para la categoría media se desaconseja el empleo de passwords o claves concertadas,
+        siendo recomendable el uso de sistemas físicos (Tokens), biométricos o certificados
+        digitales.
+
+        c) Para la categoría alta - DL, se prohíbe el uso de autenticadores basados en el empleo de
+        claves concertadas. Se exige para ello el uso de dispositivos físicos o de biometría. Para ello
+        deberán emplearse algoritmos acreditados por el Centro Criptológico Nacional, recogidos
+        en la guía CCN-STIC-807 de criptología de empleo en el ENS.
+
+      Conforme a las necesidades establecidas por el Esquema Nacional de Seguridad se deberá
+      tener también en consideración lo establecido en la guía CCN-STIC-804 para los mecanismos de
+      autenticación y que se encuentra recogido en el punto 4.2.5.
+
+      La presente guía tiene en consideración los siguientes aspectos, para el desarrollo de plantillas
+      de seguridad por categorías, enfocados en los procesos de autenticación:
+
+        a) Gestión y definición de política de contraseñas.
+
+        b) Gestión y definición de política para los bloqueos de cuenta.
+
+        c) Implementación de algoritmos para el almacenamiento de contraseñas cifradas.
+
+        d) Implementación de mecanismos para el bloqueo de cuentas de usuario y de servicio.
+
+        e) Permisividad para el empleo de mecanismos de algoritmos y criptografía basados en
+        biometría, certificados o tarjetas inteligentes.
+
+      Debe tenerse en consideración que la distribución CentOS Linux está basada en Red-Hat
+      Enterprise Linux, por este motivo y de manera análoga CentOS ha ido implementando todas las
+      funcionalidades y mecanismos de autenticación de Red-Hat Enterprise Linux, el cual tiene como
+      premisa la máxima securización en entornos de servidores en producción.
+
+      CentOS Linux gracias a esta premisa, tiene la capacidad de implementar sistemas de
+      autenticación que se adapten a cualquiera de las necesidades que puedan existir tanto ahora
+      como en el futuro. Pudiendo emplear actualmente mecanismos de autenticación basados en el
+      empleo de contraseñas con funcionalidades como Vault que permite almacenamiento central
+      segura de la información privada del usuario, así como mecanismos basados en Kerberos.
+- control_key: OP.ACC.6
+  standard_key: ENS
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Se considera acceso local aquel que se ha realizado desde los puestos dentro de las propias
+      instalaciones que tiene la organización.
+
+      El Esquema Nacional de Seguridad, tiene en cuenta la aplicación de medidas diferentes
+      atendiendo a la criticidad de servicios y sistemas. Así en función de la categoría de seguridad
+      deberán aplicarse medidas para:
+
+         a) En la categoría básica, se prevendrán ataques para evitar intentos de ataques reiterados
+         contra los sistemas de autenticación. Adicionalmente la información proporcionada en
+         caso de fallo en el acceso deberá ser mínima, siendo este hecho especialmente crítico en
+         las aplicaciones web. También deberán registrarse los intentos satisfactorios y erróneos,
+         así como la de informar a los usuarios de las obligaciones.
+
+         b) En la categoría media será exigencia el proporcionar al usuario el detalle de la última vez
+         que se ha autenticado.
+
+         c) En la categoría alta – DL deberán existir limitaciones para la fecha y hora en la que se
+         accede. También se facilitará mediante identificación singular la renovación de la
+         autenticación, no bastando el hecho de hacerlo en la sesión iniciada.
+
+      CentOS 7 Linux por medio de ficheros de configuración y módulos PAM, permite establecer
+      mecanismos para garantizar bloqueos de cuenta, proporcionar información al usuario, así como
+      establecer medidas para garantizar un cambio seguro de las credenciales. Estás serán aplicadas
+      de forma progresiva en función de la categoría de seguridad exigido.
+- control_key: OP.ACC.7
+  standard_key: ENS
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Las organizaciones deberán mantener las consideraciones de seguridad en cuanto al acceso
+      remoto cuando éste se realice desde fuera de las propias instalaciones de la organización a través
+      de redes de terceros.
+
+      Estas organizaciones deberán garantizar la seguridad, tanto en el propio acceso en sí, como
+      en el canal del acceso remoto.
+
+      CentOS 7 Linux faculta el empleo de protocolos seguros para las comunicaciones y los
+      procesos de autenticación. Sin embargo, no todos los protocolos empleados por defecto después
+      de una instalación común se pueden considerar seguros. La presente guía tiene en consideración
+      estos detalles y por lo tanto habilitará o deshabilitará en su defecto aquellos protocolos que son
+      considerados seguros o no, incluido en ello los correspondientes a autenticaciones empleadas
+      en redes locales o remotas.
+- control_key: OP.EXP.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      Los equipos antes de su entrada en producción deberán configurarse de tal forma que:
+
+        a)  Se retiren cuentas y contraseñas estándar.
+
+        b)  Se aplicará la regla de mínima funcionalidad.
+
+      CentOS 7 Linux en un sistema libre con licencia copyleft GNU GPL por lo que se considera
+      indispensable la comprobación de funcionalidades evitando en la medida de lo posible las
+      provenientes de fuentes no confiables, manteniendo las estrictamente necesarias. Esto permitirá
+      adaptarse al principio de mínima exposición. Para ello se eliminarán o desactivarán mediante el
+      control de la configuración, aquellas funciones que no sean de interés no sean necesarias e
+      incluso aquellas que sean inadecuadas para el fin que se persigue.
+
+      Para el cumplimiento de este sentido las diferentes plantillas de seguridad se dotarán de las
+      funcionalidades necesarias para deshabilitar y configurar todos aquellos servicios que, no siendo
+      necesarios para ningún entorno operativo, pudieran constituir un riesgo de seguridad.
+
+      Adicionalmente se protegerán los más importantes de tal forma que quedarán configurados a
+      través de las políticas que correspondieran por categorías. Se facilitarán consejos para conocer y
+      gestionar los servicios implicados y cómo actuar ante riesgos de seguridad identificados en la red.
+
+      Adicionalmente la guía mostrará mecanismos de administración adicionales para configurar
+      nuevos componentes con objeto de reducir la superficie de exposición, así como limitar la
+      información remitida hacia Internet.
+- control_key: OP.EXP.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      Para mantener el equipamiento físico y lógico se deberán atender a las especificaciones de los
+      fabricantes en lo relativo a la instalación y mantenimiento de los sistemas. Se realizará un
+      seguimiento continuo para garantizar la seguridad de los sistemas. Para ello deberá existir un
+      procedimiento que permita analizar, priorizar y determinar cuándo aplicar las actualizaciones de
+      seguridad, parches, mejoras y nuevas versiones. La priorización tendrá en cuenta la variación del
+      riesgo en función de la aplicación o no de la actualización.
+
+      En este sentido la presente guía sigue los patrones establecidos tanto por CentOS, como por
+      Red-Hat por ser el fabricante de la distribución en la que se basa CentOS. Debe tenerse en
+      consideración que este Sistema Operativo es un elemento en constante evolución, donde ante
+      la aparición de un riesgo de seguridad deberá dotar de los mecanismos necesarios para paliar el
+      problema. Para ello Red-Hat y máximo 72 horas después CentOS, hace una constante difusión de
+      actualizaciones de seguridad que deberá evaluar e implementar sobre los servidores, con objetos
+      de mantener las garantías de seguridad necesarias.
+
+      Adicionalmente a las actualizaciones de seguridad, se debe tomar en consideración que
+      CentOS ofrece ciclos de actualizaciones de 10 años. No debe confundir no obstante dichas
+      actualizaciones de funcionalidad con las actualizaciones tradicionales de seguridad, sin embargo,
+      CentOS Linux seguirá recibiendo las actualizaciones de seguridad dentro del ciclo natural de
+      publicación de las mismas.
+
+      Para ello deberá diferenciar los siguientes tipos de actualizaciones:
+
+        a) Actualizaciones de seguridad. Las actualizaciones de seguridad vienen a subsanar
+        problemas más frecuentes del Sistema Operativo, en relación a los componentes más
+        críticos del sistema.
+
+        b) Actualizaciones de seguridad:
+
+          i) Los proveedores de sistemas operativos Linux proporcionan actualizaciones periódicas,
+          que en su mayoría son parches de seguridad del sistema operativo. Debe asegurarse de
+          que los sistemas operativos actualizados con los parches de seguridad más recientes.
+
+          ii) Mediante el plugin yum-security es posible listar y restringir las actualizaciones
+          únicamente a las que sean por criterios de seguridad. Los paquetes los clasifica según:
+
+            – Enhancement. Una mejora que entra dentro de criterios de seguridad por algún
+            motivo, por ejemplo, una mejora en el paquete chkrootkit.
+
+            – Bugfix. Solución de un bug, igualmente que cumple criterios de seguridad de forma
+            secundaria.
+
+            – Security. Solución a un problema de seguridad propiamente dicho.
+
+        c) Actualizaciones de los repositorios.
+
+          i) Un repositorio es un directorio o sitio web que contiene paquetes de software y archivos
+          de índices. Las utilidades de administración de software como yum automáticamente
+          ubican y obtienen los paquetes RPM correctos desde esos repositorios. Este método
+          soluciona tener que buscar e instalar las nuevas aplicaciones o actualizaciones de forma
+          manual. Se puede utilizar un único comando para actualizar todo el software del sistema
+          o buscar por nuevo software según un criterio dado. Las utilidades de administración de
+          paquetes en CentOS 7 están pre configuradas para utilizar tres de estos repositorios:
+
+            – Base. Los paquetes que conforman un lanzamiento de CentOS, tal y como están en el
+            disco.
+
+            – Actualizaciones. Versiones actualizadas de los paquetes proporcionados en Base.
+
+            – Extras. Paquetes para una variada gama de software adicional.
+
+            Las actualizaciones de CentOS, por lo general, mantienen una compatibilidad binaria
+            con versiones anteriores.
+
+            Recuerde por lo tanto que deberá atender no solo a las especificaciones del
+            fabricante en cuanto a las actualizaciones de seguridad, sino también a las
+            actualizaciones que incluyen las mejoras de funcionalidad. Consulte la siguiente
+            dirección URL para más información.
+- control_key: OP.EXP.6
+  standard_key: ENS
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      La organización para puestos de trabajo deberá implementar una solución antimalware que
+      proteja contra código dañino. Se considerarán como tal los virus, gusanos, troyanos, programas
+      espías y en general cualquier tipo de aplicación considerada como malware.
+
+      Debe tomarse en consideración que, aunque CentOS 7.4 Linux venga provisto de SELinux, éste
+      no cubre todo el espectro de protección frente a código dañino. Por ejemplo, sin una solución de
+      administración centralizada como la aportada por Red-Hat Satellite, Spacewalk o la de otros
+      fabricantes no tendrá la visibilidad para hacer la gestión centralizada de la seguridad y gestión de
+      incidencias demandadas por el Esquema Nacional de Seguridad.
+
+      Adicionalmente este producto en sí mismo no ofrece un mecanismo de protección con
+      administración centralizada, objetivo fundamental de toda organización no solo para centralizar
+      los procesos de despliegue y configuración de políticas de protección, sino de la centralización
+      de los estados y reportes de detección y eliminación de malware.
+
+      Las organizaciones deberán por lo tanto proveer de otra solución frente a código dañino que
+      ofrezca un alcance completo en la detección y eliminación de malware, así como atender a las
+      recomendaciones del fabricante para su mantenimiento.
+- control_key: OP.EXP.8
+  standard_key: ENS
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      Aplicable en las categorías básicas, media y alta de seguridad, se deberán implementar
+      mecanismos para garantizar la trazabilidad de las acciones de los usuarios. Para ellos se deberá
+      conocer:
+
+        a) Quién realiza la actividad, cuándo la realiza y sobre qué.
+
+        b)Se incluirá la actividad de los usuarios y especialmente la de los operadores y
+        administradores del sistema en cuanto pueden acceder a la configuración y actuar en el
+        mantenimiento del mismo.
+
+        c) Deben registrarse las actividades realizadas con éxito, así como los intentos infructuosos.
+
+        d) La determinación de las actividades y con qué nivel de detalles, se determinará en base al
+        análisis de riesgos que se haya realizado sobre el sistema.
+
+        e) La categoría alta - DL requiere un sistema automatizado de recolección, consolidación y
+        análisis de los registros de actividad.
+
+      CentOS 7.4 Linux, implementa mecanismos para la auditoría de los sistemas e infraestructuras. El problema
+      consiste en quede forma predeterminada los datos son almacenados localmente como la utilidad Audit
+- control_key: OP.EXP.10
+  standard_key: ENS
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      En las categorías medias y altas se deberán implementar mecanismos orientados a la
+      protección de los registros de actividad. Estas medidas deberán:
+
+        a) Determinar el período de retención de los registros.
+
+        b) Asegurar la fecha y hora.
+
+        c) Permitir el mantenimiento de los registros sin que estos puedan ser alterados o eliminados
+        por personal no autorizado.
+
+        d) Las copias de seguridad, si existen, se ajustarán a los mismos requisitos.
+- control_key: MP.EQ.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      Aplicable desde la categoría media se establece la necesidad de realizar un bloqueo de la
+      cuenta toda vez que se haya producido una inactividad en el sistema tras un tiempo prudencial.
+      Dicho tiempo prudencial deberá ser establecido por política de seguridad.
+
+      Adicionalmente a todos aquellos sistemas de categoría alta - DL, deberán cancelarse las
+      sesiones abiertas, cuando se supere un tiempo de actividad superior al anteriormente planteado.
+      Estos controles serán aplicables a Linux mediante la configuración de módulos PAM (Pluggable
+      Authentication Modules) y ficheros de configuración local del equipo.
+- control_key: MP.EQ.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Los equipos que salgan de las instalaciones donde opere la organización y por lo tanto no
+      puedan beneficiarse de las medidas de protección física que éstas ofrezcan, deberán ser
+      protegidos frente a riegos de pérdida o robo.
+
+      Como condición general a partir de la categoría básica, los sistemas portátiles, deberán ser
+      identificados e inventariados. Deberá asimismo de proporcionarse de un mecanismo de
+      comunicación de incidencias frente a pérdidas o sustracciones de los mismos.
+
+      En dicho procedimiento deberán consignarse mecanismos para las bajas de cuentas, inclusive
+      aquellas que permitan conexiones remotas desde el equipo perdido o sustraído. Para ello deberá
+      asimismo consignarse un sistema de protección perimetral que minimice la visibilidad exterior y
+      controle las opciones de acceso al interior cuando el equipo se conecte a redes, en particular si
+      el equipo se conecta a redes públicas.
+
+      Para aquellos sistemas portátiles que manejen información considerada como de categoría
+      alta - DL según las definiciones del nivel ENS, deberán disponerse de mecanismos de cifrado que
+      permitan la confidencialidad de los datos almacenados.
+
+      Existen en el mercado numerosas soluciones que permiten el cumplimiento de esta medida
+      recogida para categorías altas - DL de información en el RD 3/2010. CentOS 7 Linux en su versión
+      1708 permite el uso de la solución de LUKS (Linux Unified Key Setup) como mecanismo para
+      garantizar la confidencialidad de los datos.
+- control_key: MP.COM.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Se deberá asegurar la autenticidad del otro extremo en un canal de comunicaciones antes de
+      proceder al intercambio de datos entre los mismos. Además, deberá prevenirse ataques activos,
+      garantizando que los mismos serán al menos detectados, permitiendo activarse los
+      procedimientos que se hubieran previsto en el tratamiento frente a incidentes.
+
+      En aquellos sistemas que les sea de aplicación la categoría media, además de los mecanismos
+      anteriores aplicables a la categoría básica, les será de aplicación la necesidad de implementar
+      redes virtuales privadas cuando su comunicación se realice por redes fuera de la organización.
+      Para ello se deberá tener en consideración los algoritmos que han sido acreditados por el Centro
+      Criptológico Nacional.
+
+      Para aquellos entornos con sistemas o información catalogados como de categoría alta - DL,
+      es recomendable el empleo de dispositivos hardware para el establecimiento y utilización de
+      redes virtuales privadas, frente a soluciones de tipo software. Se deberá tener en consideración
+      los productos que se encuentran certificados y acreditados.
+
+      A través de controles centralizados en plantillas de seguridad, se establecerán mecanismos
+      que controlen el acceso y salida de información a los puestos de trabajo mediante el empleo del
+      firewall en su modalidad avanzada. Aunque se tratará en extensión en un anexo de la presente
+      guía, el operador podrá conocer todos los detalles de esta solución a través de la información
+      que proporciona el fabricante.
+
+      Además, se establecerán configuraciones relativas a la protección de la autenticación,
+      habilitando solo aquellos protocolos que son válidos y seguros.
+- control_key: MP.INFO.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      Se debe asegurar la integridad de la información con una categoría alta - DL de
+      confidencialidad cifrada tanto durante su almacenamiento como durante su transmisión
+      Solo será visible en claro dicha información cuando se esté realizando uso de ella.
+
+      La presente guía establece mecanismos a través de LUKS para garantizar el cifrado de los datos
+      existentes en los sistemas.
+
+      Las políticas y configuraciones en la presente guía establecen la implementación de los
+      algoritmos más seguros posibles que garanticen la integridad y confidencialidad de los datos
+      transmitidos dentro de la red de área local.
+
+      Deberá adicionalmente aplicar mecanismos que garanticen el cifrado de comunicaciones
+      cuando acceda a servicios e información de la organización de forma remota cuando esté fuera
+      de ella.
+- control_key: MP.COM.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+    implementation_status: In Place
+- control_key: MP.EQ.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.IF.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.IF.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.IF.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.IF.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.IF.5
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.IF.7
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.INFO.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.INFO.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.INFO.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.INFO.6
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.PER.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.PER.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.PER.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.S.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.S.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.SI.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.SI.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.SI.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: MP.SW.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: OP.EXP.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: OP.EXP.11
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: OP.PL.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: OP.PL.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: ORG.1
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: ORG.2
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: ORG.3
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable
+- control_key: ORG.4
+  standard_key: ENS
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: No Aplicable

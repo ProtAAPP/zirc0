@@ -1,0 +1,1492 @@
+name: ENS
+ORG:
+  family: ORG
+  name: MARCO ORGANIZATIVO
+ORG.1:
+  family: ORG
+  name: POLÍTICA DE SEGURIDAD
+  description: |
+    La política de seguridad será aprobada por el órgano superior competente que
+    corresponda, de acuerdo con lo establecido en el artículo 11, y se plasmará en un
+    documento escrito, en el que, de forma clara, se precise, al menos, lo siguiente:
+
+      a.  Los objetivos o misión de la organización.
+
+      b.  El marco legal y regulatorio en el que se desarrollarán las actividades.
+
+      c.  Los roles o funciones de seguridad, definiendo para cada uno, los deberes y
+      responsabilidades del cargo, así como el procedimiento para su designación y renovación.
+
+      d.  La estructura del comité o los comités para la gestión y coordinación de la
+      seguridad, detallando su ámbito de responsabilidad, los miembros y la relación con otros
+      elementos de la organización.
+
+      e.  Las directrices para la estructuración de la documentación de seguridad del
+      sistema, su gestión y acceso.
+
+      La política de seguridad debe referenciar y ser coherente con lo establecido en el
+      Documento de Seguridad que exige el Real Decreto 1720/2007, en lo que corresponda.
+ORG.2:
+  family: ORG
+  name: NORMATIVA DE SEGURIDAD
+  description: |
+    Se dispondrá de una serie de documentos que describan:
+
+      a.  El uso correcto de equipos, servicios e instalaciones.
+
+      b.  Lo que se considerará uso indebido.
+
+      c.  La responsabilidad del personal con respecto al cumplimiento o violación de estas
+      normas - derechos, deberes y medidas disciplinarias de acuerdo con la legislación
+      vigente.
+ORG.3:
+  family: ORG
+  name: PROCEDIMIENTO DE SEGURIDAD
+  description: |
+    Se dispondrá de una serie de documentos que detallen de forma clara y precisa:
+
+      a) Cómo llevar a cabo las tareas habituales.
+
+      b) Quién debe hacer cada tarea.
+
+      c) Cómo identificar y reportar comportamientos anómalos.
+
+ORG.4:
+  family: ORG
+  name: PROCESO DE AUTORIZACIÓN
+  description: |
+    Se establecerá un proceso formal de autorizaciones que cubra todos los elementos del
+    sistema de información:
+
+      a) Utilización de instalaciones, habituales y alternativas.
+
+      b) Entrada de equipos en producción, en particular, equipos que involucren
+      criptografía.
+
+      c) Entrada de aplicaciones en producción.
+
+      d) Establecimiento de enlaces de comunicaciones con otros sistemas.
+
+      e) Utilización de medios de comunicación, habituales y alternativos.
+
+      f) Utilización de soportes de información.
+
+      g) Utilización de equipos móviles. Se entenderá por equipos móviles ordenadores
+      portátiles, PDA, u otros de naturaleza análoga.
+OP.PL:
+  family: OP.PL
+  name: PLANIFICACIÓN
+OP.PL.1:
+  family: OP.PL
+  name: ANÁLISIS DE RIESGOS
+  description: |
+    Categoría BÁSICA
+    
+    Bastará un análisis informal, realizado en lenguaje natural. Es decir, una exposición
+    textual que describa los siguientes aspectos:
+
+      a) Identifique los activos más valiosos del sistema.
+
+      b) Identifique las amenazas más probables.
+
+      c) Identifique las salvaguardas que protegen de dichas amenazas.
+
+      d) Identifique los principales riesgos residuales.
+
+    Categoría MEDIA
+
+    Se deberá realizar un análisis semi-formal, usando un lenguaje específico, con un
+    catálogo básico de amenazas y una semántica definida. Es decir, una presentación con
+    tablas que describa los siguientes aspectos:
+
+      a) Identifique y valore cualitativamente los activos más valiosos del sistema.
+
+      b) Identifique y cuantifique las amenazas más probables.
+
+      c) Identifique y valore las salvaguardas que protegen de dichas amenazas.
+
+      d) Identifique y valore el riesgo residual.
+
+    Categoría ALTA
+
+    Se deberá realizar un análisis formal, usando un lenguaje específico, con un fundamento
+    matemático reconocido internacionalmente. El análisis deberá cubrir los siguientes
+    aspectos:
+
+      a) Identifique y valore cualitativamente los activos más valiosos del sistema.
+
+      b) Identifique y cuantifique las amenazas posibles.
+
+      c) Identifique las vulnerabilidades habilitantes de dichas amenazas.
+
+      d) Identifique y valore las salvaguardas adecuadas.
+
+      e) Identifique y valore el riesgo residual.
+OP.PL.2:
+  family: OP.PL
+  name: ARQUITECTURA DE SEGURIDAD
+  description: |
+    La seguridad del sistema será objeto de un planteamiento integral detallando, al menos,
+    los siguientes aspectos:
+
+      a) Documentación de las instalaciones
+
+        1.º Áreas.
+
+        2.º Puntos de acceso.
+
+      b) Documentación del sistema
+
+        1.º Equipos.
+
+        2.º Redes internas y conexiones al exterior.
+
+        3.º Puntos de acceso al sistema (puestos de trabajo y consolas de administración).
+
+      c) Esquema de líneas de defensa
+
+        1.º Puntos de interconexión a otros sistemas o a otras redes, en especial si se trata
+        de Internet.
+
+        2.º Cortafuegos, DMZ, etc.
+
+        3.º Utilización de tecnologías diferentes para prevenir vulnerabilidades que pudieran
+        perforar simultáneamente varias líneas de defensa.
+
+      d) Sistema de identificación y autenticación de usuarios
+
+        1.º Uso de claves concertadas, contraseñas, tarjetas de identificación, biometría, u
+        otras de naturaleza análoga.
+
+        2.º Uso de ficheros o directorios para autenticar al usuario y determinar sus derechos
+        de acceso.
+
+      e) Controles técnicos internos
+
+        1.º Validación de datos de entrada, salida y datos intermedios.
+
+      f) Sistema de gestión con actualización y aprobación periódica.
+OP.PL.3:
+  family: OP.PL
+  name: ADQUISICIÓN DE NUEVOS COMPONENTES
+  description: |
+    Se establecerá un proceso formal para planificar la adquisición de nuevos componentes
+    del sistema, proceso que:
+
+      a) Atenderá a las conclusiones del análisis de riesgos [op.pl.1].
+
+      b) Será acorde a la arquitectura de seguridad escogida [op.pl.2].
+
+      c) Contemplará las necesidades técnicas, de formación y de financiación de forma
+      conjunta.
+OP.PL.4:
+  family: OP.PL
+  name: DIMENSIONAMIENTO / GESTIÓN DE CAPACIDADES
+  description: |
+    Con carácter previo a la puesta en explotación, se realizará un estudio previo que
+    cubrirá los siguientes aspectos:
+
+      a) Necesidades de procesamiento.
+
+      b) Necesidades de almacenamiento de información - durante su procesamiento y
+      durante el periodo que deba retenerse.
+
+      d) Necesidades de comunicación.
+
+      e) Necesidades de personal - cantidad y cualificación profesional.
+
+      f) Necesidades de instalaciones y medios auxiliares.
+OP.PL.5:
+  family: OP.PL
+  name: COMPONENTES CERTIFICADOS
+  description: |
+    Se utilizarán preferentemente sistemas, productos o equipos cuyas funcionalidades de
+    seguridad y su nivel hayan sido evaluados conforme a normas europeas o internacionales
+    y que estén certificados por entidades independientes de reconocida solvencia.
+    Tendrán la consideración de normas europeas o internacionales, ISO/IEC 15408 u
+    otras de naturaleza y calidad análogas.
+
+    Tendrán la consideración de entidades independientes de reconocida solvencia las
+    recogidas en los acuerdos o arreglos internacionales de reconocimiento mutuo de los
+    certificados de la seguridad de la tecnología de la información u otras de naturaleza
+    análoga.
+OP.ACC:
+  family: OP.ACC
+  name: CONTROL DE ACCESOS
+  description: |
+    El control de acceso cubre el conjunto de actividades preparatorias y ejecutivas para
+    que una determinada entidad, usuario o proceso, pueda, o no, acceder a un recurso del
+    sistema para realizar una determinada acción.
+
+    El control de acceso que se implante en un sistema real será un punto de equilibrio
+    entre la comodidad de uso y la protección de la información. En sistemas de nivel Bajo, se
+    primará la comodidad, mientras que en sistemas de nivel Alto se primará la protección.
+
+    En todo control de acceso se requerirá lo siguiente:
+
+      a) Que todo acceso esté prohibido, salvo concesión expresa.
+
+      b) Que la entidad quede identificada singularmente [op.acc.1].
+
+      c) Que la utilización de los recursos esté protegida [op.acc.2].
+
+      d) Que se definan para cada entidad los siguientes parámetros - a qué se necesita
+      acceder, con qué derechos y bajo qué autorización [op.acc.4].
+
+      e) Serán diferentes las personas que autorizan, usan y controlan el uso [op.acc.3].
+
+      f) Que la identidad de la entidad quede suficientemente autenticada [mp.acc.5].
+
+      g) Que se controle tanto el acceso local ([op.acc.6]) como el acceso remoto ([op.acc.7]).
+
+    Con el cumplimiento de todas las medidas indicadas se garantizará que nadie accederá
+    a recursos sin autorización. Además, quedará registrado el uso del sistema ([op.exp.8])
+    para poder detectar y reaccionar a cualquier fallo accidental o deliberado.
+
+    Cuando se interconecten sistemas en los que la identificación, autenticación y autorización
+    tengan lugar en diferentes dominios de seguridad, bajo distintas responsabilidades, en los
+    casos en que sea necesario, las medidas de seguridad locales se acompañarán de los
+    correspondientes acuerdos de colaboración que delimiten mecanismos y procedimientos
+    para la atribución y ejercicio efectivos de las responsabilidades de cada sistema ([op.ext])
+OP.ACC.1:
+  family: OP.ACC
+  name: IDENTIFICACIÓN
+  description: |
+    La identificación de los usuarios del sistema se realizará de acuerdo con lo que se
+    indica a continuación:
+
+      a) Se asignará un identificador singular para cada entidad (usuario o proceso) que
+      accede al sistema, de tal forma que:
+
+        1.º Se puede saber quién recibe y qué derechos de acceso recibe.
+
+        2.º Se puede saber quién ha hecho algo y qué ha hecho.
+
+      b) Las cuentas de usuario se gestionarán de la siguiente forma
+
+        1.º Cada cuenta estará asociada a un identificador único.
+
+        2.º Las cuentas deben ser inhabilitadas en los siguientes casos - cuando el usuario
+        deja la organización; cuando el usuario cesa en la función para la cual se requería la
+        cuenta de usuario; o, cuando la persona que la autorizó, da orden en sentido contrario.
+
+        3.º Las cuentas se retendrán durante el periodo necesario para atender a las
+        necesidades de trazabilidad de los registros de actividad asociados a las mismas. A este
+        periodo se le denominará periodo de retención.
+OP.ACC.2:
+  family: OP.ACC
+  name: REQUISITOS DE ACCESO
+  description: |
+    Los requisitos de acceso se atenderán a lo que a continuación se indica:
+
+    a) Los recursos del sistema se protegerán con algún mecanismo que impida su
+    utilización, salvo a las entidades que disfruten de derechos de acceso suficientes.
+
+    b) Los derechos de acceso de cada recurso, se establecerán según las decisiones
+    de la persona responsable del recurso, ateniéndose a la política y normativa de seguridad
+    del sistema.
+
+    c) Particularmente se controlará el acceso a los componentes del sistema y a sus
+    ficheros o registros de configuración.
+OP.ACC.3:
+  family: OP.ACC
+  name: SEGREGACIÓN DE FUNCIONES Y TAREAS
+  description: |
+    El sistema de control de acceso se organizará de forma que se exija la concurrencia
+    de dos o más personas para realizar tareas críticas, anulando la posibilidad de que un solo
+    individuo autorizado, pueda abusar de sus derechos para cometer alguna acción ilícita.
+    En concreto, se separarán al menos las siguientes funciones:
+
+      a) Desarrollo de operación.
+
+      b) Configuración y mantenimiento del sistema de operación.
+
+      c) Auditoría o supervisión de cualquier otra función.
+OP.ACC.4:
+  family: OP.ACC
+  name: PROCESO DE GESTIÓN DE DERECHOS DE ACCESO
+  description: |
+    Los derechos de acceso de cada usuario, se limitarán atendiendo a los siguientes
+    principios:
+
+      a) Mínimo privilegio. Los privilegios de cada usuario se reducirán al mínimo
+      estrictamente necesario para cumplir sus obligaciones. De esta forma se acotan los daños
+      que pudiera causar una entidad, de forma accidental o intencionada.
+
+      b) Necesidad de conocer. Los privilegios se limitarán de forma que los usuarios sólo
+      accederán al conocimiento de aquella información requerida para cumplir sus
+      obligaciones.
+
+      c) Capacidad de autorizar. Sólo y exclusivamente el personal con competencia para
+      ello, podrá conceder, alterar o anular la autorización de acceso a los recursos, conforme a
+      los criterios establecidos por su propietario.
+OP.ACC.5:
+  family: OP.ACC
+  name: MECANISMOS DE AUTENTICACIÓN
+  description: |
+    Los mecanismos de autenticación frente al sistema se adecuarán al nivel del sistema
+    atendiendo a las consideraciones que siguen.
+
+    Las guías CCN-STIC desarrollarán los mecanismos concretos adecuados a cada
+    nivel.
+
+    Nivel BAJO
+
+      a) Se admitirá el uso de cualquier mecanismo de autenticación - claves concertadas,
+      o dispositivos físicos (en expresión inglesa »tokens») o componentes lógicos tales como
+      certificados software u otros equivalentes o mecanismos biométricos.
+
+      b) En el caso de usar contraseñas se aplicarán reglas básicas de calidad de las
+      mismas.
+
+      c) Se atenderá a la seguridad de los autenticadores de forma que:
+
+        1.º Los autenticadores se activarán una vez estén bajo el control efectivo del
+        usuario.
+
+        2.º Los autenticadores estarán bajo el control exclusivo del usuario.
+
+        3.º El usuario reconocerá que los ha recibido y que conoce y acepta las obligaciones
+        que implica su tenencia, en particular el deber de custodia diligente, protección de su
+        confidencialidad e información inmediata en caso de pérdida.
+
+        4.º Los autenticadores se cambiarán con una periodicidad marcada por la política de
+        la organización, atendiendo a la categoría del sistema al que se accede.
+
+        5.º Los autenticadores se retirarán y serán deshabilitados cuando la entidad (persona,
+        equipo o proceso) que autentican termina su relación con el sistema.
+
+    Nivel MEDIO
+
+      a) No se recomendará el uso de claves concertadas.
+
+      b) Se recomendará el uso de otro tipo de mecanismos del tipo dispositivos físicos
+      (tokens) o componentes lógicos tales como certificados software u otros equivalentes o
+      biométricos.
+
+      c) En el caso de usar contraseñas se aplicarán políticas rigurosas de calidad de la
+      contraseña y renovación frecuente.
+
+    Nivel ALTO
+
+      a) Los autenticadores se suspenderán tras un periodo definido de no utilización.
+
+      b) No se admitirá el uso de claves concertadas.
+
+      c) Se exigirá el uso de dispositivos físicos (tokens) personalizados o biometría.
+
+      d) En el caso de utilización de dispositivos físicos (tokens) se emplearán algoritmos
+      acreditados por el Centro Criptológico Nacional.
+
+      e) Se emplearán, preferentemente, productos certificados [op.pl.5].
+OP.ACC.6:
+  family: OP.ACC
+  name: ACCESO LOCAL
+  description: |
+    Se considera acceso local al realizado desde puestos de trabajo dentro de las propias
+    instalaciones de la organización. Estos accesos tendrán en cuenta el nivel de las
+    dimensiones de seguridad:
+
+    Nivel BAJO
+
+      a) Se prevendrán ataques que puedan revelar información del sistema sin llegar a
+      acceder al mismo. La información revelada a quien intenta acceder, debe ser la mínima
+      imprescindible (los diálogos de acceso proporcionarán solamente la información
+      indispensable).
+
+      b) El número de intentos permitidos será limitado, bloqueando la oportunidad de
+      acceso una vez efectuados un cierto número de fallos consecutivos.
+
+      c) Se registrarán los accesos con éxito, y los fallidos.
+
+      d) El sistema informará al usuario de sus obligaciones inmediatamente después de
+      obtener el acceso.
+
+    Nivel MEDIO
+
+    Se informará al usuario del último acceso efectuado con su identidad.
+
+    Nivel ALTO
+
+      a) El acceso estará limitado por horario, fechas y lugar desde donde se accede.
+
+      b) Se definirán aquellos puntos en los que el sistema requerirá una renovación de la
+      autenticación del usuario, mediante identificación singular, no bastando con la sesión
+      establecida.
+OP.ACC.7:
+  family: OP.ACC
+  name: ACCESO REMOTO
+  description: |
+    Se considera acceso remoto al realizado desde fuera de las propias instalaciones de
+    la organización, a través de redes de terceros.
+
+    Se garantizará la seguridad del sistema cuando accedan remotamente usuarios u
+    otras entidades, lo que implicará proteger tanto el acceso en sí mismo (como [op.acc.6])
+    como el canal de acceso remoto (como en [mp.com.2] y [mp.com.3]).
+
+    Nivel MEDIO
+
+    Se establecerá una política específica de lo que puede hacerse remotamente,
+    requiriéndose autorización positiva.
+OP.EXP:
+  family: OP.EXP
+  name: EXPLOTACIÓN
+OP.EXP.1:
+  family: OP.EXP
+  name: INVENTARIO DE ACTIVOS
+  description: |
+    Se mantendrá un inventario actualizado de todos los elementos del sistema, detallando
+    su naturaleza e identificando a su propietario; es decir, la persona que es responsable de
+    las decisiones relativas al mismo.
+OP.EXP.2:
+  family: OP.EXP
+  name: CONFIGURACIÓN DE SEGURIDAD
+  description: |
+    Se configurarán los equipos previamente a su entrada en operación, de forma que:
+
+      a) Se retiren cuentas y contraseñas estándar.
+
+      b) Se aplicará la regla de «mínima funcionalidad»
+
+        1.º El sistema debe proporcionar la funcionalidad requerida para que la organización
+        alcance sus objetivos y ninguna otra funcionalidad.
+
+        2.º No proporcionará funciones gratuitas, ni de operación, ni de administración, ni de
+        auditoría, reduciendo de esta forma su perímetro al mínimo imprescindible.
+
+        3.º Se eliminará o desactivará mediante el control de la configuración, aquellas
+        funciones que no sean de interés, no sean necesarias, e incluso, aquellas que sean
+        inadecuadas al fin que se persigue.
+
+      c) Se aplicará la regla de «seguridad por defecto»
+
+        1.º Las medidas de seguridad serán respetuosas con el usuario y protegerán a éste,
+        salvo que se exponga conscientemente a un riesgo.
+
+        2.º Para reducir la seguridad, el usuario tiene que realizar acciones conscientes.
+
+        3.º El uso natural, en los casos que el usuario no ha consultado el manual, será un
+        uso seguro.
+OP.EXP.3:
+  family: OP.EXP
+  name: GESTIÓN DE LA CONFIGURACIÓN
+  description: |
+    Se gestionará de forma continua la configuración de los componentes del sistema de
+    forma que:
+
+      a) Se mantenga en todo momento la regla de «funcionalidad mínima» ([op.exp.2]).
+
+      b) Se mantenga en todo momento la regla de «seguridad por defecto» ([op.exp.2]).
+
+      c) El sistema se adapte a las nuevas necesidades, previamente autorizadas ([op.acc.4]).
+
+      d) El sistema reaccione a vulnerabilidades reportadas ([op.exp.4]).
+
+      e) El sistema reaccione a incidencias (ver [op.exp.7]).
+OP.EXP.4:
+  family: OP.EXP
+  name: MANTENIMIENTO
+  description: |
+    Para mantener el equipamiento físico y lógico que constituye el sistema, se aplicará lo
+    siguiente:
+
+      a) Se atenderá a las especificaciones de los fabricantes en lo relativo a instalación y
+      mantenimiento de los sistemas.
+
+      b) Se efectuará un seguimiento continuo de los anuncios de defectos.
+
+      c) Se dispondrá de un procedimiento para analizar, priorizar y determinar cuándo
+      aplicar las actualizaciones de seguridad, parches, mejoras y nuevas versiones. La
+      priorización tendrá en cuenta la variación del riesgo en función de la aplicación o no de la
+      actualización.
+OP.EXP.5:
+  family: OP.EXP
+  name: GESTIÓN DE CAMBIOS
+  description: |
+    Se mantendrá un control continuo de cambios realizados en el sistema, de forma
+    que:
+
+      a) Todos los cambios anunciados por el fabricante o proveedor serán analizados
+      para determinar su conveniencia para ser incorporados, o no.
+
+      b) Antes de poner en producción una nueva versión o una versión parcheada, se
+      comprobará en un equipo que no esté en producción, que la nueva instalación funciona
+      correctamente y no disminuye la eficacia de las funciones necesarias para el trabajo
+      diario. El equipo de pruebas será equivalente al de producción en los aspectos que se
+      comprueban.
+
+      c) Los cambios se planificarán para reducir el impacto sobre la prestación de los
+      servicios afectados.
+
+      d) Mediante análisis de riesgos se determinará si los cambios son relevantes para la
+      seguridad del sistema. Aquellos cambios que impliquen una situación de riesgo de nivel
+      alto serán aprobados explícitamente de forma previa a su implantación.
+OP.EXP.6:
+  family: OP.EXP
+  name: PROTECCIÓN FRENTE A CÓDIGO DAÑINO
+  description: |
+    Se considera código dañino - los virus, los gusanos, los troyanos, los programas espías,
+    conocidos en terminología inglesa como «spyware», y en general, todo lo conocido como
+    «malware».
+
+    Se dispondrá de mecanismos de prevención y reacción frente a código dañino con
+    mantenimiento de acuerdo a las recomendaciones del fabricante.
+OP.EXP.7:
+  family: OP.EXP
+  name: GESTIÓN DE INCIDENCIAS
+  description: |
+    Se dispondrá de un proceso integral para hacer frente a los incidentes que puedan
+    tener un impacto en la seguridad del sistema, incluyendo:
+
+      a) Procedimiento de reporte de incidentes reales o sospechosos, detallando el
+      escalado de la notificación.
+
+      b) Procedimiento de toma de medidas urgentes, incluyendo la detención de servicios,
+      el aislamiento del sistema afectado, la recogida de evidencias y protección de los registros,
+      según convenga al caso.
+
+      c) Procedimiento de asignación de recursos para investigar las causas, analizar las
+      consecuencias y resolver el incidente.
+
+      d) Procedimientos para informar a las partes interesadas, internas y externas.
+
+      e) Procedimientos para:
+
+        1.º Prevenir que se repita el incidente.
+
+        2.º Incluir en los procedimientos de usuario la identificación y forma de tratar el
+        incidente.
+
+        3.º Actualizar, extender, mejorar u optimizar los procedimientos de resolución de
+        incidencias.
+
+    La gestión de incidentes que afecten a datos de carácter personal tendrá en cuenta lo
+    dispuesto en el Real Decreto 1720 de 2007, en lo que corresponda.
+OP.EXP.8:
+  family: OP.EXP
+  name: REGISTRO DE ACTIVIDAD DE LOS USUARIOS
+  description: |
+    Se registrarán todas las actividades de los usuarios en el sistema, de forma que:
+
+      a) El registro indicará quién realiza la actividad, cuando la realiza y sobre qué
+      información.
+
+      b) Se incluirá la actividad de los usuarios y, especialmente, la de los operadores y
+      administradores del sistema en cuanto pueden acceder a la configuración y actuar en el
+      mantenimiento del mismo.
+
+      c) Deben registrarse las actividades realizadas con éxito y los intentos fracasados.
+
+      d) La determinación de qué actividades debe en registrarse y con qué niveles de detalle
+      se determinará a la vista del análisis de riesgos realizado sobre el sistema ([op.pl.1])
+OP.EXP.9:
+  family: OP.EXP
+  name: REGISTRO DE LA GESTIÓN DE INCIDENCIAS
+  description: |
+    Se registrarán todas las actuaciones relacionadas con la gestión de incidencias, de
+    forma que:
+
+      a) Se registrará el reporte inicial, las actuaciones de emergencia y las modificaciones
+      del sistema derivadas del incidente.
+
+      b) Se registrará aquella evidencia que pueda, posteriormente, sustentar una demanda
+      judicial, o hacer frente a ella, cuando el incidente pueda llevar a actuaciones disciplinarias
+      sobre el personal interno, sobre proveedores externos o a la persecución de delitos. En la
+      determinación de la composición y detalle de estas evidencias, se recurrirá a asesoramiento
+      legal especializado.
+
+      c) Como consecuencia del análisis de las incidencias, se revisará la determinación
+      de los eventos auditables.
+OP.EXP.10:
+  family: OP.EXP
+  name: PROTECCIÓN DE LOS REGISTROS DE ACTIVIDAD
+  description: |
+    Se protegerán los registros del sistema, de forma que:
+
+      a) Se determinará el periodo de retención de los registros.
+
+      b) Se asegurará la fecha y hora. Ver [mp.info.5].
+
+      c) Los registros no podrán ser modificados ni eliminados por personal no autorizado.
+
+      d) Las copias de seguridad, si existen, se ajustarán a los mismos requisitos
+OP.EXP.11:
+  family: OP.EXP
+  name: PROTECCIÓN DE CLAVES CRIPTOGRÁFICAS
+  description: |
+    Las claves criptográficas se protegerán durante todo su ciclo de vida - (1) generación,
+    (2) transporte al punto de explotación, (3) custodia durante la explotación, (4) archivo
+    posterior a su retirada de explotación activa y (5) destrucción final.
+
+    Categoría BÁSICA
+
+      a) Los medios de generación estarán aislados de los medios de explotación.
+
+      b) Las claves retiradas de operación que deban ser archivadas, lo serán en medios
+      aislados de los de explotación.
+
+    Categoría MEDIA
+
+      a) Se usarán programas evaluados o dispositivos criptográficos certificados.
+
+      b) Se emplearán algoritmos acreditados por el Centro Criptológico Nacional
+OP.EXT:
+  family: OP.EXT
+  name: SERVICIOS EXTERNOS
+  description: |
+    Cuando se utilicen recursos externos a la organización, sean servicios, equipos,
+    instalaciones o personal, deberá tenerse en cuenta que la delegación se limita a las
+    funciones.
+
+    La organización sigue siendo en todo momento responsable de los riesgos en que se
+    incurre en la medida en que impacten sobre la información manejada y los servicios finales
+    prestados por la organización.
+
+    La organización dispondrá las medidas necesarias para poder ejercer su responsabilidad
+    y mantener el control en todo momento.
+OP.EXT.1:
+  family: OP.EXT
+  name: CONTRATACIÓN Y ACUERDOS DE NIVEL DE SERVICIO
+  description: |
+    Previa a la utilización de recursos externos se establecerán contractualmente las
+    características del servicio prestado y las responsabilidades de las partes. Se detallará lo
+    que se considera calidad mínima del servicio prestado y las consecuencias de su
+    incumplimiento.
+OP.EXT.2:
+  family: OP.EXT
+  name: GESTIÓN DIARIA
+  description: |
+    Para la gestión diaria del sistema, se establecerán los siguientes puntos:
+
+      a) Un sistema rutinario para medir el cumplimiento de las obligaciones de servicio y
+      el procedimiento para neutralizar cualquier desviación fuera del margen de tolerancia
+      acordado ([op.ext.1]).
+
+      b) El mecanismo y los procedimientos de coordinación para llevar a cabo las tareas
+      de mantenimiento de los sistemas afectados por el acuerdo.
+
+      c) El mecanismo y los procedimientos de coordinación en caso de incidencias y
+      desastres (ver [op.exp.7]).
+OP.EXT.9:
+  family: OP.EXT
+  name: MEDIOS ALTERNATIVOS
+  description: |
+    Estará prevista la provisión del servicio por medios alternativos en caso de
+    indisponibilidad del servicio contratado. El servicio alternativo disfrutará de las mismas
+    garantías de seguridad que el servicio habitual.
+OP.CONT:
+  family: OP.CONT
+  name: CONTINUIDAD DEL SERVICIO
+OP.CONT.1:
+  family: OP.CONT
+  name: ANÁLISIS DE IMPACTO
+  description: |
+    Se realizará un análisis de impacto que permita determinar:
+
+      a) Los requisitos de disponibilidad de cada servicio medidos como el impacto de una
+      interrupción durante un cierto periodo de tiempo.
+
+      b) Los elementos que son críticos para la prestación de cada servicio.
+OP.CONT.2:
+  family: OP.CONT
+  name: PLAN DE CONTINUIDAD
+  description: |
+    Se desarrollará un plan de continuidad que establezca las acciones a ejecutar en caso
+    de interrupción de los servicios prestados con los medios habituales. Este plan contemplará
+    los siguientes aspectos:
+
+      a) Se identificarán funciones, responsabilidades y actividades a realizar.
+
+      b) Existirá una previsión de los medios alternativos que se va a conjugar para poder
+      seguir prestando los servicios.
+
+      c) Todos los medios alternativos estarán planificados y materializados en acuerdos o
+      contratos con los proveedores correspondientes.
+
+      d) Las personas afectadas por el plan recibirán formación específica relativa a su
+      papel en dicho plan.
+
+      e) El plan de continuidad será parte integral y armónica de los planes de continuidad
+      de la organización en otras materias ajenas a la seguridad.
+OP.CONT.3:
+  family: OP.CONT
+  name: PRUEBAS PERIÓDICAS
+  description: |
+    Se realizarán pruebas periódicas para localizar y, corregir en su caso, los errores o
+    deficiencias que puedan existir en el plan de continuidad
+OP.MON:
+  family: OP.MON
+  name: MONITORIZACIÓN DEL SISTEMA
+  description: |
+    El sistema estará sujeto a medidas de monitorización de su actividad.
+OP.MON.1:
+  family: OP.MON
+  name: DETECCIÓN DE INTRUSIÓN
+  description: |
+    Se dispondrán de herramientas de detección o de prevención de intrusión.
+OP.MON.2:
+  family: OP.MON
+  name: SISTEMA DE MÉTRICAS
+  description: |
+    Se establecerá un conjunto de indicadores que mida el desempeño real del sistema en
+    materia de seguridad, en los siguientes aspectos:
+
+      a) Grado de implantación de las medidas de seguridad.
+
+      b) Eficacia y eficiencia de las medidas de seguridad.
+
+      c) Impacto de los incidentes de seguridad.
+MP.IF:
+  family: MP.IF
+  name: PROTECCIÓN DE LAS INSTALACIONES Y LA INFRAESTRUCTURA
+MP.IF.1:
+  family: MP.IF
+  name: ÁREAS SEPARADAS Y CON CONTROL DE ACCESO
+  description: |
+    El equipamiento de instalará en áreas separadas específicas para su función.
+    Se controlarán los accesos a las áreas indicadas de forma que sólo se pueda acceder
+    por las entradas previstas y vigiladas.
+MP.IF.2:
+  family: MP.IF
+  name: IDENTIFICACIÓN DE LAS PERSONAS
+  description: |
+    El mecanismo de control de acceso se atendrá a lo que se dispone a continuación:
+
+      a) Se identificará a todas las personas que accedan a los locales donde hay
+      equipamiento que forme parte del sistema de información.
+
+      b) Se registrarán las entradas y salidas de personas.
+MP.IF.3:
+  family: MP.IF
+  name: ACONDICIONAMIENTO DE LOS LOCALES
+  description: |
+    Los locales donde se ubiquen los sistemas de información y sus componentes,
+    dispondrán de elementos adecuados para el eficaz funcionamiento del equipamiento allí
+    instalado. Y, en especial:
+
+      a) Condiciones de temperatura y humedad.
+
+      b) Protección frente a las amenazas identificadas en el análisis de riesgos.
+
+      c) Protección del cableado frente a incidentes fortuitos o deliberados.
+MP.IF.4:
+  family: MP.IF
+  name: ENERGÍA ELÉCTRICA
+  description: |
+    Los locales donde se ubiquen los sistemas de información y sus componentes
+    dispondrán de la energía eléctrica, y sus tomas correspondientes, necesaria para su
+    funcionamiento, de forma que en los mismos:
+
+      a) Se garantizará el suministro de potencia eléctrica.
+
+      b) Se garantizará el correcto funcionamiento de las luces de emergencia
+
+    Nivel MEDIO
+
+    Se garantizará el suministro eléctrico a los sistemas en caso de fallo del suministro
+    general, garantizando el tiempo suficiente para una terminación ordenada de los procesos,
+    salvaguardando la información
+MP.IF.5:
+  family: MP.IF
+  name: PROTECCIÓN FRENTE A LOS INCENDIOS
+  description: |
+    Los locales donde se ubiquen los sistemas de información y sus componentes se
+    protegerán frente a incendios fortuitos o deliberados, aplicando al menos la normativa
+    industrial pertinente.
+MP.IF.6:
+  family: MP.IF
+  name: PROTECCIÓN FRENTE A INUNDACIONES
+  description: |
+    Los locales donde se ubiquen los sistemas de información y sus componentes se
+    protegerán frente a incidentes fortuitos o deliberados causados por el agua.
+MP.IF.7:
+  family: MP.IF
+  name: REGISTRO DE ENTRADA Y SALIDA DE EQUIPAMIENTO
+  description: |
+    Se llevará un registro pormenorizado de toda entrada y salida de equipamiento,
+    incluyendo la identificación de la persona que autoriza de movimiento.
+MP.IF.9:
+  family: MP.IF
+  name: INSTALACIONES ALTERNATIVAS
+  description: |
+    Se garantizará la existencia y disponibilidad de instalaciones alternativas para poder
+    trabajar en caso de que las instalaciones habituales no estén disponibles. Las instalaciones
+    alternativas disfrutarán de las mismas garantías de seguridad que las instalaciones
+    habituales.
+MP.PER:
+  family: MP.PER
+  name: GESTIÓN DEL PERSONAL
+MP.PER.1:
+  family: MP.PER
+  name: CARACTERIZACIÓN DEL PUESTO DE TRABAJO
+  description: |
+    Cada puesto de trabajo se caracterizará de la siguiente forma:
+
+      a) Se definirán las responsabilidades relacionadas con cada puesto de trabajo en
+      materia de seguridad. La definición se basará en el análisis de riesgos.
+
+      b) Se definirán los requisitos que deben satisfacer las personas que vayan a ocupar
+      el puesto de trabajo, en particular, en términos de confidencialidad.
+
+      c) Dichos requisitos se tendrán en cuenta en la selección de la persona que vaya a
+      ocupar dicho puesto, incluyendo la verificación de sus antecedentes laborales, formación
+      y otras referencias.
+MP.PER.2:
+  family: MP.PER
+  name: DEBERES Y OBLIGACIONES
+  description: |
+    1. Se informará a cada persona que trabaje en el sistema, de los deberes y
+    responsabilidades de su puesto de trabajo en materia de seguridad:
+
+      a) Se especificarán las medidas disciplinarias a que haya lugar.
+
+      b) Se cubrirá tanto el periodo durante el cual se desempeña el puesto, como las
+      obligaciones en caso de término de la asignación, o traslado a otro puesto de trabajo.
+
+      c) Se contemplará el deber de confidencialidad respecto de los datos a los que tenga
+      acceso, tanto durante el periodo que estén adscritos al puesto de trabajo, como
+      posteriormente a su terminación.
+
+    2. En caso de personal contratado a través de un tercero:
+
+      a) Se establecerán los deberes y obligaciones del personal.
+
+      b) Se establecerán los deberes y obligaciones de cada parte.
+
+      c) Se establecerá el procedimiento de resolución de incidentes relacionados con el
+      incumplimiento de las obligaciones.
+MP.PER.3:
+  family: MP.PER
+  name: CONCIENCIACIÓN
+  description: |
+    Se realizarán las acciones necesarias para concienciar regularmente al personal
+    acerca de su papel y responsabilidad para que la seguridad del sistema alcance los niveles
+    exigidos.
+
+    En particular, se recordará regularmente:
+
+      a) La normativa de seguridad relativa al buen uso de los sistemas.
+
+      b) La identificación de incidentes, actividades o comportamientos sospechosos que
+      deban ser reportados para su tratamiento por personal especializado.
+
+      c) El procedimiento de reporte de incidencias de seguridad, sean reales o falsas
+      alarmas.
+MP.PER.4:
+  family: MP.PER
+  name: FORMACIÓN
+  description: |
+    Se formará regularmente al personal en aquellas materias que requieran para el
+    desempeño de sus funciones, en particular en lo relativo a:
+
+      a) Configuración de sistemas.
+
+      b) Detección y reacción a incidentes.
+
+      c) Gestión de la información en cualquier soporte en el que se encuentre. Se cubrirán
+      al menos las siguientes actividades - almacenamiento, transferencia, copias, distribución y
+      destrucción.
+MP.PER.9:
+  family: MP.PER
+  name: PERSONAL ALTERNATIVO
+  description: |
+    Se garantizará a existencia y disponibilidad de otras personas que se puedan hacer
+    cargo de las funciones en caso de indisponibilidad del personal habitual. El personal
+    alternativo deberá estar sometido a las mismas garantías de seguridad que el personal
+    habitual.
+MP.EQ:
+  family: MP.EQ
+  name: PROTECCIÓN DE LOS EQUIPOS
+MP.EQ.1:
+  family: MP.EQ
+  name: PUESTO DE TRABAJO DESPEJADO
+  description: |
+    Se exigirá que los puestos de trabajo permanezcan despejados, sin más material
+    encima de la mesa que el requerido para la actividad que se está realizando en cada
+    momento.
+
+    Categoría MEDIA
+
+    Este material se guardará en lugar cerrado cuando no se esté utilizando.
+MP.EQ.2:
+  family: MP.EQ
+  name: BLOQUEO DE PUESTO DE TRABAJO
+  description: |
+    El puesto de trabajo se bloqueará al cabo de un tiempo prudencial de inactividad,
+    requiriendo una nueva autenticación del usuario para reanudar la actividad en curso.
+
+    Categoría ALTA
+
+    Pasado un cierto tiempo, superior al anterior, se cancelarán las sesiones abiertas
+    desde dicho puesto de trabajo.
+MP.EQ.3:
+  family: MP.EQ
+  name: PROTECCIÓN DE LOS PORTÁTILES
+  description: |
+    Los equipos que abandonen las instalaciones de la organización y no puedan
+    beneficiarse de la protección física correspondiente, con un riesgo manifiesto de pérdida o
+    robo, serán protegidos adecuadamente.
+
+    Sin perjuicio de las medidas generales que les afecten, se adoptarán las siguientes:
+
+      a) Se llevará un inventario de equipos portátiles junto con una identificación de la
+      persona responsable del mismo y un control regular de que está positivamente bajo su
+      control.
+
+      b) Se establecerá un canal de comunicación para informar, al servicio de gestión de
+      incidencias, de pérdidas o sustracciones.
+
+      c) Se establecerá un sistema de protección perimetral que minimice la visibilidad
+      exterior y controle las opciones de acceso al interior cuando el equipo se conecte a redes,
+      en particular si el equipo se conecta a redes públicas.
+
+      d) Se evitará, en la medida de lo posible, que el equipo contenga claves de acceso
+      remoto a la organización. Se considerarán claves de acceso remoto aquellas que sean
+      capaces de habilitar un acceso a otros equipos de la organización, u otras de naturaleza
+      análoga.
+
+    Categoría ALTA
+
+      a) Se dotará al dispositivo de detectores de violación que permitan saber el equipo
+      ha sido manipulado y activen los procedimientos previstos de gestión del incidente.
+
+      b) La información de nivel alto almacenada en el disco se protegerá mediante
+      cifrado.
+MP.EQ.9:
+  family: MP.EQ
+  name: MEDIOS ALTERNATIVOS
+  description: |
+    Se garantizará la existencia y disponibilidad de medios alternativos de tratamiento de
+    la información para el caso de que fallen los medios habituales. Estos medios alternativos
+    estarán sujetos a las mismas garantías de protección.
+
+    Igualmente, se establecerá un tiempo máximo para que los equipos alternativos entren
+    en funcionamiento.
+MP.COM:
+  family: MP.COM
+  name: PROTECCIÓN DE LAS COMUNICACIONES
+MP.COM.1:
+  family: MP.COM
+  name: PERÍMETRO SEGURO
+  description: |
+    Se dispondrá un sistema cortafuegos que separe la red interna del exterior. Todo el
+    tráfico deberá atravesar dicho cortafuegos que sólo dejara transitar los flujos previamente
+    autorizados.
+
+    Categoría ALTA
+
+      a) El sistema de cortafuegos constará de dos o más equipos de diferente fabricante
+      dispuestos en cascada.
+
+      b) Se dispondrán sistemas redundantes.
+MP.COM.2:
+  family: MP.COM
+  name: PROTECCIÓN DE LA CONFIDENCIALIDAD
+  description: |
+    Nivel MEDIO
+
+      a) Se emplearán redes privadas virtuales cuando la comunicación discurra por redes
+      fuera del propio dominio de seguridad.
+
+      b) Se emplearán algoritmos acreditados por el Centro Criptológico Nacional.
+
+    Nivel ALTO
+
+      a) Se emplearán, preferentemente, dispositivos hardware en el establecimiento y
+      utilización de la red privada virtual.
+
+      b) Se emplearán, preferentemente, productos certificados [op.pl.5].
+MP.COM.3:
+  family: MP.COM
+  name: PROTECCIÓN DE LA AUTENTICIDAD Y DE LA INTEGRIDAD
+  description: |
+    Nivel BAJO
+
+      a) Se asegurará la autenticidad del otro extremo de un canal de comunicación antes
+      de intercambiar información alguna (ver [op.acc.5]).
+
+      b) Se prevendrán ataques activos, garantizando que al menos serán detectados y
+      se activarán los procedimientos previstos de tratamiento del incidente Se considerarán
+      ataques activos:
+
+        1.º La alteración de la información en transito
+
+        2.º La inyección de información espuria
+
+        3.º El secuestro de la sesión por una tercera parte
+
+    Nivel MEDIO
+
+      a) Se emplearán redes privadas virtuales cuando la comunicación discurra por redes
+      fuera del propio dominio de seguridad.
+
+      b) Se emplearán algoritmos acreditados por el Centro Criptológico Nacional.
+
+    Nivel ALTO
+
+      a) Se valorará positivamente en empleo de dispositivos hardware en el establecimiento
+      y utilización de la red privada virtual.
+
+      b) Se emplearán, preferentemente, productos certificados [op.pl.5].
+MP.COM.4:
+  family: MP.COM
+  name: SEGREGACIÓN DE REDES
+  description: |
+    La segregación de redes acota el acceso a la información y, consiguientemente, la
+    propagación de los incidentes de seguridad, que quedan restringidos al entorno donde
+    ocurren.
+
+    La red se segmentará en segmentos de forma que haya:
+
+      a) Control de entrada de los usuarios que llegan a cada segmento.
+
+      b) Control de salida de la información disponible en cada segmento.
+
+      c) Las redes se pueden segmentar por dispositivos físicos o lógicos. El punto de
+      interconexión estará particularmente asegurado, mantenido y monitorizado (como en
+      [mp.com.1]).
+MP.COM.9:
+  family: MP.COM
+  name: MEDIOS ALTERNATIVOS
+  description: |
+    Se garantizará la existencia y disponibilidad de medios alternativos de comunicación
+    para el caso de que fallen los medios habituales. Los medios alternativos de comunicación:
+
+      a) Estarán sujetos y proporcionar las mismas garantías de protección que el medio
+      habitual.
+
+      b) Garantizarán un tiempo máximo de entrada en funcionamiento.
+MP.SI:
+  family: MP.SI
+  name: PROTECCIÓN DE LOS SOPORTES DE INFORMACIÓN
+MP.SI.1:
+  family: MP.SI
+  name: ETIQUETADO
+  description: |
+    Los soportes de información se etiquetarán de forma que, sin revelar su contenido, se
+    indique el nivel de seguridad de la información contenida de mayor calificación.
+    Los usuarios han de estar capacitados para entender el significado de las etiquetas,
+    bien mediante simple inspección, bien mediante el recurso a un repositorio que lo
+    explique.
+MP.SI.2:
+  family: MP.SI
+  name: CRIPTOGRAFÍA
+  description: |
+    Esta medida se aplica, en particular, a todos los dispositivos removibles. Se entenderán
+    por dispositivos removibles, los CD, DVD, discos USB, u otros de naturaleza análoga.
+
+    Se aplicarán mecanismos criptográficos que garanticen la confidencialidad y la
+    integridad de la información contenida.
+
+    Nivel ALTO
+
+      a) Se emplearán algoritmos acreditados por el Centro Criptológico Nacional.
+
+      b) Se emplearán, preferentemente, productos certificados [op.pl.5].
+MP.SI.3:
+  family: MP.SI
+  name: CUSTODIA
+  description: |
+    Se aplicará la debida diligencia y control a los soportes de información que permanecen
+    bajo la responsabilidad de la organización, mediante las siguientes actuaciones:
+
+      a) Garantizando el control de acceso con medidas físicas ([mp.if.1] y [mpl.if.7]) ó
+      lógicas ([mp.si.2]), o ambas.
+
+      b) Garantizando que se respetan las exigencias de mantenimiento del fabricante, en
+      especial, en lo referente a temperatura, humedad y otros agresores medioambientales.
+MP.SI.4:
+  family: MP.SI
+  name: TRANSPORTE
+  description: |
+    El responsable de sistemas garantizará que los dispositivos permanecen bajo control
+    y que satisfacen sus requisitos de seguridad mientras están siendo desplazados de un
+    lugar a otro.
+
+    Para ello:
+
+      a) Se dispondrá de un registro de salida que identifique al transportista que recibe el
+      soporte para su traslado.
+
+      b) Se dispondrá de un registro de entrada que identifique al transportista que lo
+      entrega.
+
+      c) Se dispondrá de un procedimiento rutinario que coteje las salidas con las llegadas
+      y levante las alarmas pertinentes cuando se detecte algún incidente.
+
+      d) Se utilizarán los medios de protección criptográfica ([mp.si.2]) correspondientes al
+      nivel de calificación de la información contenida de mayor nivel.
+
+      e) Se gestionarán las claves según [op.exp.11].
+MP.SI.5:
+  family: MP.SI
+  name: BORRADO Y DESTRUCCIÓN
+  description: |
+    La medida de borrado y destrucción de soportes de información se aplicará a todo tipo
+    de equipos susceptibles de almacenar información, incluyendo medios electrónicos y no
+    electrónicos.
+
+      a) Los soportes que vayan a ser reutilizados para otra información o liberados a otra
+      organización serán objeto de un borrado seguro de su anterior contenido.
+
+      b) Se destruirán de forma segura los soportes, en los siguientes casos:
+
+        1.º Cuando la naturaleza del soporte no permita un borrado seguro.
+
+        2.º Cuando así lo requiera el procedimiento asociado al tipo de la información
+        contenida.
+
+      c) Se emplearán, preferentemente, productos certificados [op.pl.5].
+MP.SW:
+  family: MP.SW
+  name: PROTECCIÓN DE LAS APLICACIONES INFORMÁTICAS
+MP.SW.1:
+  family: MP.SW
+  name: DESARROLLO DE APLICACIONES
+  description: |
+    a) El desarrollo de aplicaciones se realizará sobre un sistema diferente y separado
+    del de producción, no debiendo existir herramientas o datos de desarrollo en el entorno de
+    producción.
+
+    b) Se aplicará una metodología de desarrollo reconocida que:
+
+      1.º Tome en consideración los aspectos de seguridad a lo largo de todo el ciclo de
+      vida.
+
+      2.º Trate específicamente los datos usados en pruebas.
+
+      3.º Permita la inspección del código fuente.
+
+    c) Los siguientes elementos serán parte integral del diseño del sistema:
+
+      1.º Los mecanismos de identificación y autenticación.
+
+      2.º Los mecanismos de protección de la información tratada.
+
+      3.º La generación y tratamiento de pistas de auditoría.
+
+    d) Las pruebas anteriores a la implantación o modificación de los sistemas de
+    información no se realizarán con datos reales, salvo que se asegure el nivel de seguridad
+    correspondiente.
+MP.SW.2:
+  family: MP.SW
+  name: ACEPTACIÓN Y PUESTA EN SERVICIO
+  description: |
+    Categoría BÁSICA
+
+    Antes de pasar a producción se comprobará el correcto funcionamiento de la
+    aplicación.
+
+      a) Se comprobará que:
+
+        1.º Se cumplen los criterios de aceptación en materia de seguridad.
+
+        2.º No se deteriora la seguridad de otros componentes del servicio.
+
+      b) Las pruebas se realizarán en un entorno aislado (pre-producción).
+
+      c) Las pruebas de aceptación no se realizarán con datos reales, salvo que se asegure
+      el nivel de seguridad correspondiente.
+
+    Categoría MEDIA
+
+    Se realizarán las siguientes inspecciones previas a la entrada en servicio:
+
+      a) Análisis de vulnerabilidades.
+
+      b) Pruebas de penetración.
+
+    Categoría ALTA
+
+    Se realizarán las siguientes inspecciones previas a la entrada en servicio:
+
+      a) Análisis de coherencia en la integración en los procesos.
+
+      b) Se considerará la oportunidad de realizar una auditoría de código fuente.
+MP.INFO:
+  family: MP.INFO
+  name: PROTECCIÓN DE LA INFORMACIÓN
+MP.INFO.1:
+  family: MP.INFO
+  name: DATOS DE CARÁCTER PERSONAL
+  description: |
+    Cuando el sistema trate datos de carácter personal, se estará a lo dispuesto en la Ley
+    Orgánica 15/1999, de 13 de diciembre, y normas de desarrollo, sin perjuicio de cumplir,
+    además, las medidas establecidas por este real decreto.
+
+    Lo indicado en el párrafo anterior también se aplicará, cuando una disposición con
+    rango de ley se remita a las normas sobre datos de carácter personal en la protección de
+    información.
+MP.INFO.2:
+  family: MP.INFO
+  name: CALIFICACIÓN DE LA INFORMACIÓN
+  description: |
+    1. Para calificar la información se estará a lo establecido legalmente sobre la
+    naturaleza de la misma.
+
+    2. La política de seguridad establecerá quién es el responsable de cada información
+    manejada por el sistema.
+
+    3. La política de seguridad recogerá, directa o indirectamente, los criterios que, en
+    cada organización, determinarán el nivel de seguridad requerido, dentro del marco
+    establecido en el artículo 43 y los criterios generales prescritos en el Anexo I.
+
+    4. El responsable de cada información seguirá los criterios determinados en el
+    apartado anterior para asignar a cada información el nivel de seguridad requerido, y será
+    responsable de su documentación y aprobación formal.
+
+    5. El responsable de cada información en cada momento tendrá en exclusiva la
+    potestad de modificar el nivel de seguridad requerido, de acuerdo a los apartados
+    anteriores.
+
+    Nivel MEDIO
+
+    Se redactarán los procedimientos necesarios que describan, en detalle, la forma en
+    que se ha de etiquetar y tratar la información en consideración al nivel de seguridad que
+    requiere; y precisando cómo se ha de realizar:
+
+      a) Su control de acceso.
+
+      b) Su almacenamiento.
+
+      c) La realización de copias.
+
+      d) El etiquetado de soportes.
+
+      e) Su transmisión telemática.
+
+      f) Y cualquier otra actividad relacionada con dicha información.
+MP.INFO.3:
+  family: MP.INFO
+  name: CIFRADO DE LA INFORMACIÓN
+  description: |
+    Para el cifrado de información se estará a lo que se indica a continuación:
+
+      a) La información con un nivel alto en confidencialidad se cifrará tanto durante su
+      almacenamiento como durante su transmisión. Sólo estará en claro mientras se está
+      haciendo uso de ella.
+
+      b) Para el uso de criptografía en las comunicaciones, se estará a lo dispuesto en [mp.
+      com.2].
+
+      c) Para el uso de criptografía en los soportes de información, se estará a lo dispuesto
+      en [mp.si.2].
+MP.INFO.4:
+  family: MP.INFO
+  name: FIRMA ELECTRÓNICA
+  description: |
+    La firma electrónica es un mecanismo de prevención del repudio; es decir, previene
+    frente a la posibilidad de que en el futuro el signatario pudiera desdecirse de la información
+    firmada.
+
+    La firma electrónica garantiza la autenticidad del signatario y la integridad del
+    contenido.
+
+    Cuando se emplee firma electrónica:
+
+      a) El signatario será la parte que se hace responsable de la información, en la medida
+      de sus atribuciones.
+
+      b) Se dispondrá de una Política de Firma Electrónica, aprobada por el órgano superior
+      competente que corresponda.
+
+    Nivel BAJO
+
+    Se empleará cualquier medio de firma electrónica de los previstos en la legislación
+    vigente.
+
+    Nivel MEDIO
+
+      1. Los medios utilizados en la firma electrónica serán proporcionados a la calificación
+      de la información tratada. En todo caso:
+
+        a) Se emplearán algoritmos acreditados por el Centro Criptológico Nacional.
+
+        b) Se emplearán, preferentemente, certificados reconocidos.
+
+        c) Se emplearán, preferentemente, dispositivos seguros de firma.
+
+      2. Se garantizará la verificación y validación de la firma electrónica durante el tiempo
+      requerido por la actividad administrativa que aquélla soporte, sin perjuicio de que se pueda
+      ampliar este período de acuerdo con lo que establezca la política de firma electrónica y de
+      certificados que sea de aplicación. Para tal fin:
+
+        a) Se adjuntará a la firma, o se referenciará, toda la información pertinente para su
+        verificación y validación:
+
+          1.º Certificados.
+
+          2.º Datos de verificación y validación.
+
+        b) Se protegerán la firma y la información mencionada en el apartado anterior con un
+        sello de tiempo.
+
+        c) El organismo que recabe documentos firmados por el administrado verificará y
+        validará la firma recibida en el momento de la recepción, anexando o referenciando sin
+        ambigüedad la información descrita en los epígrafes a) y b).
+
+        d) La firma electrónica de documentos por parte de la Administración anexará o
+        referenciará sin ambigüedad la información descrita en los epígrafes a) y b).
+
+    Nivel ALTO
+
+    Se aplicarán las medidas de seguridad referentes a firma electrónica exigibles en la
+    nivel Medio, además de las siguientes:
+
+      a) Se usarán certificados reconocidos.
+
+      b) Se usarán dispositivos seguros de creación de firma.
+
+      c) Se emplearán, preferentemente, productos certificados [op.pl.5].
+MP.INFO.5:
+  family: MP.INFO
+  name: SELLOS DE TIEMPO
+  description: |
+    Los sellos de tiempo prevendrán la posibilidad del repudio posterior:
+
+      1. Los sellos de tiempo se aplicarán a aquella información que sea susceptible de ser
+      utilizada como evidencia electrónica en el futuro.
+
+      2. Los datos pertinentes para la verificación posterior de la fecha serán tratados con
+      la misma seguridad que la información fechada a efectos de disponibilidad, integridad y
+      confidencialidad.
+
+      3. Se renovarán regularmente los sellos de tiempo hasta que la información protegida
+      ya no sea requerida por el proceso administrativo al que da soporte.
+
+      4. Se utilizarán productos certificados (según [op.pl.5]) o servicios externos admitidos.
+      Véase [op.exp.10].
+MP.INFO.6:
+  family: MP.INFO
+  name: LIMPIEZA DE DOCUMENTOS
+  description: |
+    En el proceso de limpieza de documentos, se retirará de estos toda la información
+    adicional contenida en campos ocultos, meta-datos, comentarios o revisiones anteriores,
+    salvo cuando dicha información sea pertinente para el receptor del documento.
+    Esta medida es especialmente relevante cuando el documento se difunde ampliamente,
+    como ocurre cuando se ofrece al público en un servidor web u otro tipo de repositorio de
+    información.
+
+    Se tendrá presente que el incumplimiento de esta medida puede perjudicar:
+
+      a) Al mantenimiento de la confidencialidad de información que no debería haberse
+      revelado al receptor del documento.
+
+      b) Al mantenimiento de la confidencialidad de las fuentes u orígenes de la información,
+      que no debe conocer el receptor del documento.
+
+      c) A la buena imagen de la organización que difunde el documento por cuanto
+      demuestra un descuido en su buen hacer.
+MP.INFO.9:
+  family: MP.INFO
+  name: COPIAS DE SEGURIDAD (BACKUP)
+  description: |
+    Se realizarán copias de respaldo que permitan recuperar datos perdidos accidental o
+    intencionadamente con una antigüedad determinada.
+
+    Las copias de respaldo disfrutarán de la misma seguridad que los datos originales en
+    lo que se refiere a integridad, confidencialidad, autenticidad y trazabilidad. En particular, se
+    considerará la conveniencia o necesidad de que las copias de seguridad estén cifradas
+    para garantizar la confidencialidad.
+
+    Las copias de respaldo deberán abarcar:
+
+      a) Información de trabajo de la organización.
+
+      b) Aplicaciones en explotación, incluyendo los sistemas operativos.
+
+      c) Datos de configuración, servicios, aplicaciones, equipos, u otros de naturaleza
+      análoga.
+
+      d) Claves utilizadas para preservar la confidencialidad de la información.
+MP.S:
+  family: MP.S
+  name: PROTECCIÓN DE LOS SERVICIOS
+MP.S.1:
+  family: MP.S
+  name: PROTECCIÓN DEL CORREO ELECTRÓNICO
+  description: |
+    El correo electrónico se protegerá frente a las amenazas que le son propias, actuando
+    del siguiente modo:
+
+      a) La información distribuida por medio de correo electrónico, se protegerá, tanto en
+      el cuerpo de los mensajes, como en los anexos.
+
+      b) Se protegerá la información de encaminamiento de mensajes y establecimiento de
+      conexiones.
+
+      c) Se protegerá a la organización frente a problemas que se materializan por medio
+      del correo electrónico, en concreto:
+
+        1.º Correo no solicitado, en su expresión inglesa «spam».
+
+        2.º Programas dañinos, constituidos por virus, gusanos, troyanos, espías, u otros de
+        naturaleza análoga.
+
+        3.º Código móvil de tipo «applet».
+
+      d) Se establecerán normas de uso del correo electrónico por parte del personal
+      determinado. Estas normas de uso contendrán:
+
+        1.º Limitaciones al uso como soporte de comunicaciones privadas.
+
+        2.º Actividades de concienciación y formación relativas al uso del correo electrónico.
+MP.S.2:
+  family: MP.S
+  name: PROTECCIÓN DE SERVICIOS Y APLICACIONES WEB
+  description: |
+    Los subsistemas dedicados a la publicación de información deberán ser protegidos
+    frente a las amenazas que les son propias.
+
+      a) Cuando la información tenga algún tipo de control de acceso, se garantizará la
+      imposibilidad de acceder a la información obviando la autenticación, en particular tomando
+      medidas en los siguientes aspectos:
+
+        1.º Se evitará que el servidor ofrezca acceso a los documentos por vías alternativas
+        al protocolo determinado.
+
+        2.º Se prevendrán ataques de manipulación de URL.
+
+        3.º Se prevendrán ataques de manipulación de fragmentos de información que se
+        almacena en el disco duro del visitante de una página web a través de su navegador, a
+        petición del servidor de la página, conocido en terminología inglesa como «cookies».
+
+        4.º Se prevendrán ataques de inyección de código.
+
+      b) Se prevendrán intentos de escalado de privilegios.
+
+      c) Se prevendrán ataques de «cross site scripting».
+
+      d) Se prevendrán ataques de manipulación de programas o dispositivos que realizan
+      una acción en representación de otros, conocidos en terminología inglesa como «proxies»
+      y, sistemas especiales de almacenamiento de alta velocidad, conocidos en terminología
+      inglesa como «cachés».
+MP.S.8:
+  family: MP.S
+  name: PROTECCIÓN FRENTE A LA DENEGACIÓN DE SERVICIO
+  description: |
+    Nivel MEDIO
+
+    Se establecerán medidas preventivas y reactivas frente a ataques de denegación de
+    servicio (DOS Denial of Service). Para ello:
+
+      a) Se planificará y dotará al sistema de capacidad suficiente para atender a la carga
+      prevista con holgura.
+
+      b) Se desplegarán tecnologías para prevenir los ataques conocidos.
+
+    Nivel ALTO
+      a) Se establecerá un sistema de detección de ataques de denegación de servicio.
+
+      b) Se establecerán procedimientos de reacción a los ataques, incluyendo la
+      comunicación con el proveedor de comunicaciones.
+
+      c) Se impedirá el lanzamiento de ataques desde las propias instalaciones perjudicando
+      a terceros.
+MP.S.9:
+  family: MP.S
+  name: MEDIOS ALTERNATIVOS
+  description: |
+    Se garantizará la existencia y disponibilidad de medios alternativos para prestar los
+    servicios en el caso de que fallen los medios habituales. Estos medios alternativos estarán
+    sujetos a las mismas garantías de protección que los medios habituales.
